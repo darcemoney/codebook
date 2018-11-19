@@ -1,10 +1,12 @@
+let pr, curs
+
 new Phaser.Game({
     width: 683,
     height: 384,
     physics: {
         default: 'arcade',
         arcade: {
-            gravity:{ y: 300, x: 100},
+            gravity:{ y: 300},
             debug: true
         }
     },
@@ -15,9 +17,21 @@ new Phaser.Game({
         },
         create(){
             this.add.image(0,0,'bg').setOrigin(0,0)
-           this.player = this.physics.add.sprite(100,100,'pr')
-           this.player.setCollideWorldBounds(true)
-           this.player.setBounce(10)
+           pr = this.physics.add.sprite(100,100,'pr')
+           pr.setCollideWorldBounds(true)
+           pr.setBounce(1)
+
+           curs = this.input.keyboard.createCursorKeys()
+        },
+
+        update() {
+            if (curs.left.isDown) {
+                pr.setVelocityX(-200)
+            }   else if (curs.right.isDown) {
+                pr.setVelocityX(200)
+            }
         }
+            
+        
     }
 })
