@@ -19,8 +19,8 @@ new Phaser.Game({
             this.add.image(0,0,'bg').setOrigin(0,0)
            pr = this.physics.add.sprite(100,100,'pr')
            pr.setCollideWorldBounds(true)
-           pr.setBounce(0.5)
-           pr.setDragX(900)
+           pr.setBounce(1)
+           pr.setDragX(13)
 
            curs = this.input.keyboard.createCursorKeys()
         },
@@ -30,6 +30,10 @@ new Phaser.Game({
                 pr.setVelocityX(-200)
             }   else if (curs.right.isDown) {
                 pr.setVelocityX(200)
+            }
+
+            if (curs.space.isDown || curs.up.isDown) {
+                pr.setVelocityY(-600)
             }
         }
             
