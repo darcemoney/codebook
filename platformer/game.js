@@ -14,6 +14,7 @@ new Phaser.Game({
         preload(){
             this.load.image('bg', './assets/plat-dg.png')
             this.load.image('pr', './assets/wow.png')
+            this.load.image('plat','./assets/platt.png')
         },
         create(){
             this.add.image(0,0,'bg').setOrigin(0,0)
