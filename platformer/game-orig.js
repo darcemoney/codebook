@@ -3,9 +3,9 @@ let pr, curs
 new Phaser.Game({
     width: 683,
     height: 384,
-    physics: {
+   physics: {
         default: 'arcade',
-        arcade: {
+        arcade: { 
             gravity:{ y: 300},
             debug: false
         }
